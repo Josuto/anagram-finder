@@ -11,6 +11,9 @@ import java.util.Set;
 import java.util.TreeSet;
 
 import lombok.RequiredArgsConstructor;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import org.springframework.util.Assert;
@@ -18,6 +21,8 @@ import org.springframework.util.Assert;
 @Component
 @RequiredArgsConstructor
 public class AnagramCommandLineRunner implements CommandLineRunner {
+
+    private static final Logger log = LoggerFactory.getLogger(AnagramCommandLineRunner.class);
 
     @Override
     public void run(String... args) throws Exception {
@@ -54,7 +59,7 @@ public class AnagramCommandLineRunner implements CommandLineRunner {
         List<String> wordsOfCurrentLength = this.loadWordsOfGivenLengthFrom(filePath, length);
         Map<String, Set<String>> anagramGroups = AnagramGroupFinder.find(wordsOfCurrentLength);
         for (Set<String> anagramGroup : anagramGroups.values()) {
-            System.out.println(anagramGroup);
+            log.info("{}", String.join(", ", anagramGroup));
         }
         wordsOfCurrentLength = null; // enable GC to delete the processed words from memory
     }

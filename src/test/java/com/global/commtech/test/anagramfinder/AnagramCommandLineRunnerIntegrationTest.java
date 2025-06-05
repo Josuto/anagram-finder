@@ -18,8 +18,8 @@ class AnagramCommandLineRunnerIntegrationTest {
 
     @Test
     void shouldFindAnagrams(final CapturedOutput capturedOutput) {
-        assertThat(capturedOutput.getOut()).contains("[abc, cba, bac]");
-        assertThat(capturedOutput.getOut()).contains("[unf, fun]");
-        assertThat(capturedOutput.getOut()).contains("[hello]");
+        assertThat(capturedOutput.getOut()).contains("abc, cba, bac");
+        assertThat(capturedOutput.getOut()).contains("unf, fun");
+        assertThat(capturedOutput.getOut()).contains("hello");
     }
 }
