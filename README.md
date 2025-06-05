@@ -29,8 +29,8 @@ I decided to pick Java `Map` to store the canonical version of each existing ana
 
 ## Assumptions
 - Case sensitivity e.g., `ABC` is not an anagram of `abc`
-- Ignore word duplication: displaying duplicated words may not be adding much value, specially when processing production files
+- Ignore word duplication: displaying duplicated words may not be adding much value, specially when processing big production files
 
-## Possible New Features and Optimisations
+## Future Optimisations
 - Perform checks on content of specified file e.g., prevent null values and words composed of less than two characters
 - Enable parallel processing of the various chunks of words included in the file given to the command line utility
