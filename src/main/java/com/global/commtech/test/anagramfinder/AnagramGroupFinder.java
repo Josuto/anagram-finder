@@ -5,11 +5,14 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Set;
 
 public class AnagramGroupFinder {
     
     public static Map<String, Set<String>> find(final List<String> words) {
+        Objects.requireNonNull(words, "The given list cannot be null");
+        
         Map<String, Set<String>> anagramGroups = new HashMap<>();
         for (String word : words) {
             String canonicalForm = canonicalize(word);
