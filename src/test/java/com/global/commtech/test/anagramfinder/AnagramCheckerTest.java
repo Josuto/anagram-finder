@@ -18,5 +18,6 @@ public class AnagramCheckerTest {
         assertFalse(AnagramChecker.areAnagrams("ABC", "CBD"));
         assertFalse(AnagramChecker.areAnagrams("ABCD", "CBA"));
         assertFalse(AnagramChecker.areAnagrams("ABC", "CBAD"));
+        assertFalse(AnagramChecker.areAnagrams("ABB", "AAB"));
     }
 }
