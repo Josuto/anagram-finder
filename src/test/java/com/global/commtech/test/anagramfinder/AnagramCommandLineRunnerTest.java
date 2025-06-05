@@ -16,7 +16,7 @@ class AnagramCommandLineRunnerTest {
     AnagramCommandLineRunner anagramCommandLineRunner;
 
     @Test
-    void shouldWork() {
+    void shouldPrintTheAnagramGroupsOfTheSampleFile() {
         try {
             anagramCommandLineRunner.run("src/test/resources/example1.txt");
         } catch (Exception exception) {
