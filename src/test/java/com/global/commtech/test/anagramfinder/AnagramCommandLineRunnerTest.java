@@ -2,6 +2,7 @@ package com.global.commtech.test.anagramfinder;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.fail;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -13,6 +14,15 @@ class AnagramCommandLineRunnerTest {
 
     @InjectMocks
     AnagramCommandLineRunner anagramCommandLineRunner;
+
+    @Test
+    void shouldWork() {
+        try {
+            anagramCommandLineRunner.run("src/test/resources/example1.txt");
+        } catch (Exception exception) {
+            fail("The happy path test case must pass");
+        }
+    }
 
     @Test
     void shouldThrowExceptionWhenNoArgumentsPresent() {
